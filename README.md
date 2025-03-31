@@ -23,4 +23,26 @@ Ensure you have the following installed on your Raspberry Pi:
  - Python 3.11 or later
 
  - pip and venv for virtual environments
+
+##Setup Instructions
+
+Clone the Repository:
+
+git clone https://github.com/your-repo/lpr-yolo.git
+cd lpr-yolo
+
+Create and Activate a Virtual Environment:
+
+python3 -m venv my_env
+source my_env/bin/activate  # On Windows, use `my_env\Scripts\activate`
+
+Install Dependencies:
+
+pip install -r requirements.txt
+
+Download YOLOv8 Model Weights:
+
+wget https://github.com/ultralytics/assets/releases/download/v8.0.0/yolov8n.pt
+
+Run the License Plate Recognition Script:
  
