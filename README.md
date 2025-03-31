@@ -27,22 +27,38 @@ Ensure you have the following installed on your Raspberry Pi:
 ##Setup Instructions
 
 Clone the Repository:
-
-git clone https://github.com/your-repo/lpr-yolo.git
-cd lpr-yolo
+`git clone https://github.com/your-repo/lpr-yolo.git`
+`cd lpr-yolo`
 
 Create and Activate a Virtual Environment:
-
-python3 -m venv my_env
+`python3 -m venv my_env`
 source my_env/bin/activate  # On Windows, use `my_env\Scripts\activate`
 
 Install Dependencies:
-
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 Download YOLOv8 Model Weights:
-
-wget https://github.com/ultralytics/assets/releases/download/v8.0.0/yolov8n.pt
+`wget https://github.com/ultralytics/assets/releases/download/v8.0.0/yolov8n.pt`
 
 Run the License Plate Recognition Script:
+`python main.py`
+
+##Common Issues and Fixes
+
+ModuleNotFoundError: No module named 'sort'
+
+Install the required package:
+`pip install filterpy`
+
+_pickle.UnpicklingError: Weights only load failed
+Ensure that your YOLO model weights are correctly downloaded and valid.
+Try re-downloading the model:
+
+`rm yolov8n.pt`
+`wget https://github.com/ultralytics/assets/releases/download/v8.0.0/yolov8n.pt`
+
+Slow Performance on Raspberry Pi
+- Ensure no unnecessary background processes are running.
+- Optimize the script by reducing input resolution.
+- Consider using a Raspberry Pi-compatible accelerator like Coral TPU.
  
